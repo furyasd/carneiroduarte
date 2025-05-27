@@ -106,6 +106,37 @@
       line-height: 1.6;
     }
 
+    .precos {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .precos h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 1.5rem;
+      background-color: #eef2f1;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
     footer {
       background-color: #eee;
       padding: 1rem 0;
@@ -136,7 +167,7 @@
           <li><a href="#">Página Inicial</a></li>
           <li><a href="#quem-somos">Sobre</a></li>
           <li><a href="#">Serviços</a></li>
-          <li><a href="#">Preçário</a></li>
+          <li><a href="#precos">Preçário</a></li>
           <li><a href="#">Contactos</a></li>
         </ul>
       </nav>
@@ -173,6 +204,21 @@
           <li>Membro internacional da APA.</li>
           <li>Professora Auxiliar Convidada na Faculdade de Educação e Psicologia da Universidade Católica Portuguesa, Centro Regional do Porto.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="precos" id="precos">
+      <h2>Preçário</h2>
+      <div class="cards">
+        <div class="card">1ª Consulta Psicologia Clínica<br>50€</div>
+        <div class="card">Acompanhamento Psicologia Clínica<br>45€</div>
+        <div class="card">Psicoterapia<br>50€</div>
+        <div class="card">Terapia de Casal<br>70€</div>
+        <div class="card">Sexologia<br>50€</div>
+        <div class="card">Avaliação Psicológica (Presencial)<br>Inclui até 3 consultas + relatório<br>150€</div>
+        <div class="card">Consulta adicional Avaliação Psicológica<br>45€</div>
+        <div class="card">Relatório Avaliação Psicológica<br>50€</div>
+        <div class="card">Relatório Avaliação Psicológica (em Inglês)<br>75€</div>
       </div>
     </section>
   </main>
