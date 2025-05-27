@@ -130,6 +130,90 @@ nav a:hover {
   font-size: 1rem;
 }
 
+.contactos {
+  padding: 4rem 1rem;
+  text-align: left;
+  background-color: #e3ecea;
+}
+
+.contactos .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contactos h2 {
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.contactos-info {
+  flex: 1 1 45%;
+}
+
+.contactos-info p,
+.contactos-info ul {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.contactos-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contactos-info a:hover {
+  text-decoration: underline;
+}
+
+.contactos-form {
+  flex: 1 1 45%;
+}
+
+.contactos-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactos-form input,
+.contactos-form textarea {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.contactos-form button {
+  padding: 10px;
+  background-color: #a9bfb9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contactos-form button:hover {
+  background-color: #92aba4;
+}
+
+.contactos-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
 footer {
   background-color: #eee;
   padding: 1rem 0;

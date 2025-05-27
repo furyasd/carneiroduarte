@@ -1,33 +1,38 @@
 <section class="contactos" id="contactos">
   <div class="container">
     <h2>Contactos</h2>
-    <p>Pode agendar consulta por telefone, whatsapp, email ou formulário.<br>
-    Rua D. Nuno Álvares Pereira nº 11, 1º andar, sala 6<br>
-    4780-439, Santo Tirso</p>
 
-    <p><strong>Telefone</strong><br>
-    <a href="https://wa.me/351968602292">968 602 292</a> (Alexandra Carneiro)<br>
-    <a href="https://wa.me/351936464154">936 464 154</a> (Raquel Duarte)</p>
+    <div class="contactos-info">
+      <p>Pode agendar consulta por telefone, whatsapp, email ou formulário.<br>
+      Rua D. Nuno Álvares Pereira nº 11, 1º andar, sala 6<br>
+      4780-439, Santo Tirso</p>
 
-    <p><strong>Email</strong><br>
-    <a href="mailto:carneiro.duarte.psi@gmail.com">carneiro.duarte.psi@gmail.com</a></p>
+      <p><strong>Telefone</strong><br>
+      <a href="https://wa.me/351968602292">968 602 292</a> (Alexandra Carneiro)<br>
+      <a href="https://wa.me/351936464154">936 464 154</a> (Raquel Duarte)</p>
 
-    <p>
-      <a href="https://instagram.com" target="_blank">📷</a>
-      <a href="https://facebook.com" target="_blank">📘</a>
-    </p>
+      <p><strong>Email</strong><br>
+      <a href="mailto:carneiro.duarte.psi@gmail.com">carneiro.duarte.psi@gmail.com</a></p>
 
-    <form action="#" method="POST" style="margin-top: 2rem;">
-      <input type="text" name="nome" placeholder="Nome" required style="width: 49%; padding: 10px; margin-right: 2%;">
-      <input type="email" name="email" placeholder="Email" required style="width: 49%; padding: 10px;">
+      <p>
+        <a href="https://instagram.com" target="_blank">📷</a>
+        <a href="https://facebook.com" target="_blank">📘</a>
+      </p>
+    </div>
 
-      <textarea name="mensagem" placeholder="Contacte-nos para agendar consulta ou qualquer outra questão!" rows="5" style="width: 100%; margin-top: 10px; padding: 10px;"></textarea>
+    <div class="contactos-form">
+      <form action="https://formspree.io/f/mwkgyyyz" method="POST">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
 
-      <p>Selecione uma opção</p>
-      <label><input type="radio" name="tipo" value="online"> Consulta Online</label><br>
-      <label><input type="radio" name="tipo" value="presencial"> Consulta Presencial</label><br><br>
+        <textarea name="mensagem" placeholder="Contacte-nos para agendar consulta ou qualquer outra questão!" rows="5"></textarea>
 
-      <button type="submit" style="padding: 10px 30px; background-color: #a9bfb9; color: white; border: none; cursor: pointer;">Submeter</button>
-    </form>
+        <p>Selecione uma opção</p>
+        <label><input type="radio" name="tipo" value="online"> Consulta Online</label>
+        <label><input type="radio" name="tipo" value="presencial"> Consulta Presencial</label>
+
+        <button type="submit">Submeter</button>
+      </form>
+    </div>
   </div>
 </section>
