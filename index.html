@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carneiro & Duarte</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Futura', 'Helvetica Neue', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      flex-grow: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+    }
+
+    footer {
+      background-color: #eee;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="#">Carneiro & Duarte</a>
+      <nav>
+        <ul>
+          <li><a href="#">Página Inicial</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Preçário</a></li>
+          <li><a href="#">Contactos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Carneiro & Duarte</h1>
+      <p>Psicologia Clínica e da Saúde</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Alexandra Carneiro & Raquel Duarte - Psicologia Clínica e da Saúde</p>
+    </div>
+  </footer>
+</body>
+</html>
+
