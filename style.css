@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Futura', 'Helvetica Neue', sans-serif;
-  background-color: #fdfdfd;
+  background-color: rgb(213, 225, 223);
   color: #333;
   display: flex;
   flex-direction: column;
