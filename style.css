@@ -1,3 +1,4 @@
+/* ========== GLOBAL STYLES ========== */
 body {
   margin: 0;
   font-family: 'Jost', 'Helvetica Neue', sans-serif;
@@ -8,6 +9,16 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  border-bottom: 2px solid var(--accent, #a9bfb9);
+  padding-bottom: 0.5rem;
+}
+
+
+/* ========== HEADER & NAVIGATION ========== */
 header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -48,6 +59,7 @@ nav a:hover {
   color: #000;
 }
 
+/* ========== HERO SECTION ========== */
 .hero {
   text-align: center;
   padding: 1rem 1rem 6rem;
@@ -69,6 +81,7 @@ nav a:hover {
   line-height: 1.5;
 }
 
+/* ========== QUEM SOMOS SECTION ========== */
 .quem-somos {
   display: flex;
   flex-wrap: wrap;
@@ -104,6 +117,7 @@ nav a:hover {
   line-height: 1.6;
 }
 
+/* ========== PREÇÁRIO SECTION ========== */
 .precos {
   padding: 4rem 1rem;
   text-align: center;
@@ -135,6 +149,7 @@ nav a:hover {
   font-size: 1rem;
 }
 
+/* ========== CONTACTOS SECTION ========== */
 .contactos {
   padding: 4rem 1rem;
   text-align: left;
@@ -219,6 +234,7 @@ nav a:hover {
   font-size: 0.95rem;
 }
 
+/* ========== FOOTER ========== */
 footer {
   background-color: #eee;
   padding: 1rem 0;
@@ -227,6 +243,7 @@ footer {
   margin-top: auto;
 }
 
+/* ========== RESPONSIVE STYLES ========== */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -237,9 +254,7 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
 
-@media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
