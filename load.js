@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 async function loadSections(sections) {
   const container = document.getElementById('content');
   container.innerHTML = '';
@@ -21,6 +20,18 @@ async function loadSections(sections) {
       if (!res.ok) throw new Error('404');
       const html = await res.text();
       container.innerHTML += html;
+
+      // Enable smooth scrolling on anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
     } catch (e) {
       container.innerHTML += `<p>Erro ao carregar ${section}.</p>`;
     }
