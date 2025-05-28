@@ -52,23 +52,6 @@ h2 {
   margin-left: auto; /* Align to right */
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Only visible on mobile */
-  }
-
-  nav ul {
-    flex-direction: column; /* Vertical nav layout for mobile */
-    gap: 0.5rem;
-    width: 100%;
-    display: none; /* Hidden by default until activated */
-  }
-
-  nav ul.active {
-    display: flex; /* Show menu when active */
-  }
-}
-
 /* ========== HEADER & NAVIGATION ========== */
 header {
   background-color: #fff;
@@ -96,10 +79,11 @@ header .container {
   color: #333;
 }
 
+/* Default desktop navigation (horizontal) */
 nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row; /* Horizontal layout for desktop */
+  flex-direction: row;
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -308,6 +292,22 @@ footer {
   .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Mobile nav override: initially hidden */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .hero h1 {
