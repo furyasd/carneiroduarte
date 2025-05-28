@@ -1,6 +1,6 @@
 /* ========== GLOBAL STYLES ========== */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Enables smooth anchor scrolling */
 }
 
 body {
@@ -42,41 +42,41 @@ h2 {
 }
 
 /* ========== HAMBURGER MENU ========== */
-/* Only show on mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
-  header .container {
-    align-items: center;
-  }
-
-  .menu-toggle {
-  display: none; /* Hide by default */
+/* Hide by default on desktop, show only on mobile */
+.menu-toggle {
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto; /* Push to right */
+  margin-left: auto; /* Align to right */
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Only visible on mobile */
+  }
+
   nav ul {
-    flex-direction: column;
+    flex-direction: column; /* Vertical nav layout for mobile */
     gap: 0.5rem;
     width: 100%;
-    display: none;
+    display: none; /* Hidden by default until activated */
   }
 
   nav ul.active {
-    display: flex;
+    display: flex; /* Show menu when active */
   }
+}
 
 /* ========== HEADER & NAVIGATION ========== */
 header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
+  align-items: center;
 }
 
 .container {
@@ -99,6 +99,7 @@ header {
 nav ul {
   list-style: none;
   display: flex;
+  flex-direction: row; /* Horizontal layout for desktop */
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -234,7 +235,6 @@ nav a:hover {
   display: block;
 }
 
-
 .contactos-info {
   flex: 1 1 45%;
 }
@@ -310,14 +310,10 @@ footer {
     align-items: flex-start;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .hero h1 {
     font-size: 2.5rem;
   }
+
   .hero p {
     font-size: 1.2rem;
   }
