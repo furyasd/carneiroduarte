@@ -20,24 +20,30 @@ async function loadSections(sections) {
       if (!res.ok) throw new Error('404');
       const html = await res.text();
       container.innerHTML += html;
-
-      // Enable smooth scrolling on anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-
     } catch (e) {
       container.innerHTML += `<p>Erro ao carregar ${section}.</p>`;
     }
   }
 }
 
-window.addEventListener('load', () =>
-  loadSections(['home', 'quem-somos', 'precos', 'contactos'])
-);
+window.addEventListener('load', async () => {
+  await loadSections(['home', 'quem-somos', 'precos', 'contactos']);
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Trigger animations after sections are in DOM
+  import('./scrollreveal-init.js').then(module => {
+    if (module.initScrollAnimations) {
+      module.initScrollAnimations();
+    }
+  });
+});

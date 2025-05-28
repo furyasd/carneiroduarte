@@ -42,20 +42,25 @@ h2 {
 }
 
 /* ========== HAMBURGER MENU ========== */
+/* Only show on mobile */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu-toggle {
+    display: block;
   }
+}
 
   header .container {
     align-items: center;
   }
 
   .menu-toggle {
-    align-self: flex-end;
-    margin-top: 0.5rem;
-  }
+  display: none; /* Hide by default */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* Push to right */
+}
 
   nav ul {
     flex-direction: column;
@@ -67,7 +72,6 @@ h2 {
   nav ul.active {
     display: flex;
   }
-}
 
 /* ========== HEADER & NAVIGATION ========== */
 header {
