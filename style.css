@@ -41,15 +41,63 @@ h2 {
   display: none;
 }
 
-/* ========== HAMBURGER MENU ========== */
-/* Hide by default on desktop, show only on mobile */
+/* ========== HEADER LOGO ========== */
+.logo {
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* ========== HAMBURGER MENU ICON ========== */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto; /* Align to right */
+  margin-left: auto;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+.menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  z-index: 1100;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-close {
+    display: block;
+  }
+
+  .logo {
+    padding-left: 1rem;
+  }
+
+  .menu-toggle {
+    padding-right: 1rem;
+  }
+
+  nav ul {
+    font-size: 1.25rem;
+    text-align: center;
+  }
 }
 
 /* ========== HEADER & NAVIGATION ========== */
@@ -59,7 +107,11 @@ header {
 }
 
 header .container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 1rem;
+  gap: 0.5rem;
 }
 
 .container {
@@ -72,14 +124,6 @@ header .container {
   padding: 1rem 0;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-
-/* Default desktop navigation (horizontal) */
 nav ul {
   list-style: none;
   display: flex;
@@ -294,12 +338,19 @@ footer {
     align-items: flex-start;
   }
 
-  /* Mobile nav override: initially hidden */
   nav ul {
     display: none;
     flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.97);
+    z-index: 1000;
   }
 
   nav ul.active {
