@@ -1,6 +1,6 @@
 /* ========== GLOBAL STYLES ========== */
 html {
-  scroll-behavior: smooth; /* Enables smooth anchor scrolling */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 
-h2 {
+h2 { /* General h2, consider if this is needed or if .section-title is always used */
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
@@ -28,15 +28,15 @@ h2 {
   text-align: center;
   margin-bottom: 2.5rem;
   position: relative;
-  display: block;
+  display: block; /* Or inline-block if preferred, but width fit-content + margin auto handles block centering */
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #aaa;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  width: fit-content; /* Ensures the border only spans the text width */
+  margin-left: auto; /* Centers the block */
+  margin-right: auto; /* Centers the block */
 }
 
-.section-title::after {
+.section-title::after { /* This rule is not doing anything with display: none, can be removed if not planned for future use */
   content: '';
   display: none;
 }
@@ -45,6 +45,7 @@ h2 {
 .logo {
   padding: 0;
   margin: 0;
+  margin-left: 0.25rem; /* Small default left margin */
   flex-shrink: 0;
   font-size: 1.5rem;
   font-weight: bold;
@@ -54,74 +55,26 @@ h2 {
   align-items: center;
 }
 
-/* ========== HAMBURGER MENU ICON ========== */
-.menu-toggle {
-  display: none;
-  font-size: 2.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  z-index: 1100;
-  display: flex;
-  align-items: center;
-  padding-right: 0.5rem;
-}
-
-.menu-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #333;
-  z-index: 1100;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .menu-close {
-    display: block;
-  }
-
-  .logo {
-    padding-left: 1rem;
-  }
-
-  .menu-toggle {
-    padding-right: 1rem;
-  }
-
-  nav ul {
-    font-size: 1.25rem;
-    text-align: center;
-  }
-}
-
 /* ========== HEADER & NAVIGATION ========== */
 header {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1rem;
-  gap: 0.5rem;
+  position: sticky; /* Optional: makes header stick on scroll */
+  top: 0;           /* Optional: makes header stick on scroll */
+  z-index: 1000;    /* Optional: ensures header is above other content if sticky */
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem; /* Provides spacing for logo and toggle from screen edges */
 }
 
 nav ul {
@@ -143,11 +96,28 @@ nav a:hover {
   color: #000;
 }
 
+/* ========== HAMBURGER MENU ICON ========== */
+.menu-toggle {
+  display: none; /* Hidden by default, shown in mobile view */
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* Pushes toggle to the right in flex row */
+  z-index: 1100; /* Ensures toggle is above nav menu if overlapping somehow */
+  align-items: center; /* Aligns icon within button if button is flex */
+  padding: 0; /* Base padding, overridden in mobile */
+}
+
+/* .menu-close was here, but it's not used by the JS logic.
+   The JS changes the icon inside .menu-toggle directly.
+   So, it has been removed to avoid confusion. */
+
 /* ========== HERO SECTION ========== */
 .hero {
   text-align: center;
   padding: 1rem 1rem 6rem;
-  flex-grow: 1;
+  /* flex-grow: 1; /* Can cause issues if main content is not also flex item */
   background-color: #e3ecea;
 }
 
@@ -207,11 +177,11 @@ nav a:hover {
   text-align: center;
 }
 
-.precos h2 {
+.precos h2 { /* This h2 is styled specifically for .precos */
   font-size: 2rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid #ccc;
-  display: inline-block;
+  display: inline-block; /* Centered by parent's text-align: center */
   padding-bottom: 0.5rem;
 }
 
@@ -250,6 +220,13 @@ nav a:hover {
   justify-content: space-between;
 }
 
+/*
+  The following .contactos h2 rule was redundant because
+  contactos.html uses <h2 class="section-title">Contactos</h2>,
+  which is already styled by the .section-title rule.
+  It has been removed.
+*/
+/*
 .contactos h2 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -262,9 +239,11 @@ nav a:hover {
   width: fit-content;
   display: block;
 }
+*/
 
 .contactos-info {
   flex: 1 1 45%;
+  min-width: 280px; /* ensure it doesn't get too squished */
 }
 
 .contactos-info p,
@@ -284,6 +263,7 @@ nav a:hover {
 
 .contactos-form {
   flex: 1 1 45%;
+  min-width: 280px; /* ensure it doesn't get too squished */
 }
 
 .contactos-form form {
@@ -328,18 +308,46 @@ footer {
   padding: 1rem 0;
   text-align: center;
   font-size: 0.9rem;
-  margin-top: auto;
+  margin-top: auto; /* Pushes footer to bottom if content is short */
 }
 
 /* ========== RESPONSIVE STYLES ========== */
 @media (max-width: 768px) {
+  /* General .container rule for mobile, stacking items vertically */
   .container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* Default alignment for stacked items */
   }
 
-  nav ul {
-    display: none;
+  /* === HEADER FIXES & MOBILE STYLES === */
+  .header-container {
+    flex-direction: row;     /* CRITICAL FIX: Override .container's column to row for header items */
+    align-items: center;     /* CRITICAL FIX: Vertically align logo and toggle */
+    /* justify-content: space-between; is inherited and correctly spaces logo and toggle */
+    /* padding: 1rem; is inherited and provides edge spacing */
+  }
+
+  .logo {
+    /* Reset mobile-specific overrides that might conflict with flex alignment */
+    margin-top: 0;
+    padding-left: 0;
+    /* Desktop margin-left: 0.25rem will still apply for a small indent */
+    /* font-size might need adjustment if too large for some mobiles */
+  }
+
+  .menu-toggle {
+    display: flex; /* Make hamburger icon button visible */
+    align-items: center; /* Vertically center the icon character if needed */
+    justify-content: center; /* Horizontally center the icon character if needed */
+    /* padding: 0.6em 0.8em 0.4em 0; This was the original mobile padding.
+       Let's adjust for more balanced clickable area if needed, or use a simpler padding.
+       Using a simpler padding for easier control: */
+    padding: 0.5em; /* Adjust as needed for touch target size */
+    /* margin-left: auto; inherited from desktop, pushes it to the right */
+  }
+
+  nav ul { /* Fullscreen mobile menu styles */
+    display: none; /* Hidden by default, shown when .active */
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
@@ -349,23 +357,28 @@ footer {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(255, 255, 255, 0.97);
-    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.97); /* Slightly transparent white */
+    z-index: 1000; /* Ensure it's above other page content but below toggle if toggle needs to be on top */
   }
 
   nav ul.active {
-    display: flex;
+    display: flex; /* Show the menu */
   }
 
-  .menu-toggle {
-    display: block;
-  }
+  /* .menu-close style was removed from here as it's not used by the JS */
 
+  /* === OTHER MOBILE ADJUSTMENTS === */
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem; /* Adjusted for smaller screens */
   }
 
   .hero p {
     font-size: 1.2rem;
+  }
+
+  .contactos .container {
+    /* The general .container rule (flex-direction: column) will apply here,
+       stacking contactos-info and contactos-form, which is usually desired on mobile. */
+    gap: 2.5rem; /* Increase gap when stacked */
   }
 }
